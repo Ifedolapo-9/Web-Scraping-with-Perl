@@ -1,0 +1,17 @@
+# Article and documentation files
+article.md
+article_update.md
+node_fetch_article.md
+outline.md
+style_guide.md
+DECODO_PROXY_README.md
+
+# Scraper output and data files
+output.txt
+rendered_page.png
+scraped_quotes.csv
+scraped_quotes.json
+scraped_quotes.xml
+
+# Editor
+.vscode/
