@@ -10,16 +10,17 @@ Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 
 # Set Decodo Proxy Credentials
-$env:PROXY_USERNAME = 'spwgicglsd'
-$env:PROXY_PASSWORD = '1lo_Nyfut6yqPC1e9I'
-$env:PROXY_HOST = 'gate.decodo.com'
-$env:PROXY_PORT = '7000'
+# If not already set as environment variables, prompt for them now
+if (-not $env:PROXY_USERNAME) { $env:PROXY_USERNAME = Read-Host "Enter PROXY_USERNAME" }
+if (-not $env:PROXY_PASSWORD) { $env:PROXY_PASSWORD = Read-Host "Enter PROXY_PASSWORD" }
+if (-not $env:PROXY_HOST)     { $env:PROXY_HOST = 'gate.decodo.com' }
+if (-not $env:PROXY_PORT)     { $env:PROXY_PORT = '7000' }
 
 Write-Host "[✓] Environment variables set:" -ForegroundColor Green
-Write-Host "  PROXY_USERNAME: spwgicglsd" -ForegroundColor Gray
+Write-Host "  PROXY_USERNAME: $env:PROXY_USERNAME" -ForegroundColor Gray
 Write-Host "  PROXY_PASSWORD: (hidden)" -ForegroundColor Gray
-Write-Host "  PROXY_HOST: gate.decodo.com" -ForegroundColor Gray
-Write-Host "  PROXY_PORT: 7000" -ForegroundColor Gray
+Write-Host "  PROXY_HOST: $env:PROXY_HOST" -ForegroundColor Gray
+Write-Host "  PROXY_PORT: $env:PROXY_PORT" -ForegroundColor Gray
 Write-Host ""
 
 # Check if perl is available
